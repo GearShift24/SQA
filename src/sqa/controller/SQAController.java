@@ -1,10 +1,11 @@
 package sqa.controller;
 import java.util.PriorityQueue;
 import sqa.model.*;
+import java.util.Stack;
 
 public class SQAController 
 {
-
+	private Stack<Customer> myStack;
 	private PriorityQueue<Customer> myCustomers;
 	
 	
@@ -15,6 +16,7 @@ public class SQAController
 
 		
 		changePriorityQueue();
+		changeStack();
 		
 	}
 	
@@ -22,6 +24,7 @@ public class SQAController
 	{
 		
 		myCustomers = new PriorityQueue<Customer>();
+		myStack = new Stack<Customer>();
 		
 	}
 	
@@ -35,6 +38,14 @@ public class SQAController
 		
 		
 		myCustomers.clear();
+	}
+	
+	public void changeStack()
+	{
+		myStack.push(new Customer(1));
+		myStack.peek();
+		myStack.pop();
+		
 	}
 
 	
